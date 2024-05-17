@@ -5,15 +5,18 @@ import ReadLocations from "./ReadLocations";
 
 import PrivateRoutes from "./PrivateRoutes";
 import CreateLocation from "./CreateLocation";
+import UpdateLocation from "./UpdateLocation";
+import DeleteLocation from "./DeleteLocation";
 
 const RenderRoutes = ({ className }) => {
-
   return (
     <div className={className}>
       <Routes>
         <Route element={<PrivateRoutes />}>
           <Route exact path="/createlocation" element={<CreateLocation />} />
           <Route exact path="/readlocations" element={<ReadLocations />} />
+          <Route exact path="/update/:id" element={<UpdateLocation />} />
+          <Route exact path="/delete/:id" element={<DeleteLocation />} />
         </Route>
         <Route exact path="/" element={<Home />} />
       </Routes>
